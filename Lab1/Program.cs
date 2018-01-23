@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Lab1
 {
@@ -32,9 +33,10 @@ namespace Lab1
                 Perimeter = Length * 2 + Width * 2;
 
                 //output
-                Console.WriteLine($"Area: {Area}");
-                Console.WriteLine($"Volume: {Volume}");
-                Console.WriteLine($"Perimeter: {Perimeter}");
+                Console.WriteLine();
+                Console.WriteLine($"Area: {Area} sq ft");
+                Console.WriteLine($"Volume: {Volume} cu ft");
+                Console.WriteLine($"Perimeter: {Perimeter} ft");
                 Console.WriteLine();
 
                 Console.WriteLine("Would you like to continue? (Y/N)");
@@ -42,14 +44,29 @@ namespace Lab1
                 //input -- to run program again or not
                 userContinue = char.Parse(Console.ReadLine());
 
-                if(userContinue == 'N' || userContinue == 'n')
+                switch (userContinue)
                 {
-                    Console.WriteLine("Goodbye!");
-                    doAgain = false;
-                    Console.Read();
+                    case 'n':
+                        Console.WriteLine("Goodbye!");
+                        System.Threading.Thread.Sleep(1000);
+                        doAgain = false;
+                        break;
+                    case 'N':
+                        Console.WriteLine("Goodbye!");
+                        System.Threading.Thread.Sleep(1000);
+                        doAgain = false;
+                        break;
+                    case 'y':
+                        Console.WriteLine("Ok, here we go!");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine();
+                        break;
+                    case 'Y':
+                        Console.WriteLine("Ok, here we go!");
+                        System.Threading.Thread.Sleep(1000);
+                        Console.WriteLine();
+                        break;
                 }
-                //work on validation
-                //add in measurement (sq ft, cu ft, etc) in output
             }
 
         }
