@@ -48,6 +48,8 @@ namespace Lab1
                     doAgain = false;
                     Console.Read();
                 }
+                //work on validation
+                //add in measurement (sq ft, cu ft, etc) in output
             }
 
         }
